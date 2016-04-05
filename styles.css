@@ -1,0 +1,33 @@
+body{
+	padding:0;
+	margin:0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+header{
+	background-color: #1F4252;
+	color:#fff;
+}
+
+header > h3,nav{
+	display: inline-block;
+	margin-left:1em;
+}
+
+header > nav > span{
+	margin-left:2em;
+}
+
+header > h3:hover,span:hover{
+	color:#339E8F;
+	cursor: pointer;
+}
+
+header > nav{
+	margin-left: 2em;
+}
+
+main{
+	padding:3em;
+	width:100%;
+}
