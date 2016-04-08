@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from "angular2/router";
 
+
 import {HeaderComponent} from "./header.component";
 
 // import {UserComponent} from "./components/user.component";
@@ -11,6 +12,8 @@ import {HeaderComponent} from "./header.component";
 import {FItemComponent} from './components/fitem.component';
 import {AdamasHomeComponent} from './components/adamashome.component';
 import {AdamasHeaderComponent} from './components/adamasheader.component';
+
+import {BreadcrumbComponent} from './breadcrumb.component';
 
 
 // @RouteConfig([
@@ -25,7 +28,7 @@ import {AdamasHeaderComponent} from './components/adamasheader.component';
 @RouteConfig([
 		{path:"/", name:"Home", component:AdamasHomeComponent, useAsDefault:true},
 		{path:"/fItem",name:"Item", component: FItemComponent },
-	])
+])
 
 
 
@@ -33,22 +36,28 @@ import {AdamasHeaderComponent} from './components/adamasheader.component';
     selector: 'my-app',
     providers: [],
     template: `
-    			<!--<header-component></header-component>
-    		    <main>
-    			 	<router-outlet></router-outlet>
-    			</main> -->
-
     			<adamas-header></adamas-header>
     			<margin>
+                    <breadcrumb [routeConfig]="routeConfig"></breadcrumb>
     				<router-outlet></router-outlet>
     			</margin>
     			
     `,
    
-    directives: [HeaderComponent, ROUTER_DIRECTIVES,FItemComponent,AdamasHomeComponent,AdamasHeaderComponent]
+    directives: [
+        HeaderComponent, 
+        ROUTER_DIRECTIVES,
+        FItemComponent,
+        AdamasHomeComponent,
+        AdamasHeaderComponent,
+        BreadcrumbComponent
+        
+    ]
 })
 export class AppComponent { 
-	constructor(){
+	
 
-	}
+    constructor() {
+
+    }
 }

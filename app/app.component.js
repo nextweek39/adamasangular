@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/router", "./header.component", './components/fitem.component', './components/adamashome.component', './components/adamasheader.component'], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/router", "./header.component", './components/fitem.component', './components/adamashome.component', './components/adamasheader.component', './breadcrumb.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "angular2/router", "./header.component", './co
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, header_component_1, fitem_component_1, adamashome_component_1, adamasheader_component_1;
+    var core_1, router_1, header_component_1, fitem_component_1, adamashome_component_1, adamasheader_component_1, breadcrumb_component_1;
     var AppComponent;
     return {
         setters:[
@@ -31,6 +31,9 @@ System.register(['angular2/core', "angular2/router", "./header.component", './co
             },
             function (adamasheader_component_1_1) {
                 adamasheader_component_1 = adamasheader_component_1_1;
+            },
+            function (breadcrumb_component_1_1) {
+                breadcrumb_component_1 = breadcrumb_component_1_1;
             }],
         execute: function() {
             // @RouteConfig([
@@ -51,8 +54,15 @@ System.register(['angular2/core', "angular2/router", "./header.component", './co
                     core_1.Component({
                         selector: 'my-app',
                         providers: [],
-                        template: "\n    \t\t\t<!--<header-component></header-component>\n    \t\t    <main>\n    \t\t\t \t<router-outlet></router-outlet>\n    \t\t\t</main> -->\n\n    \t\t\t<adamas-header></adamas-header>\n    \t\t\t<margin>\n    \t\t\t\t<router-outlet></router-outlet>\n    \t\t\t</margin>\n    \t\t\t\n    ",
-                        directives: [header_component_1.HeaderComponent, router_1.ROUTER_DIRECTIVES, fitem_component_1.FItemComponent, adamashome_component_1.AdamasHomeComponent, adamasheader_component_1.AdamasHeaderComponent]
+                        template: "\n    \t\t\t<adamas-header></adamas-header>\n    \t\t\t<margin>\n                    <breadcrumb [routeConfig]=\"routeConfig\"></breadcrumb>\n    \t\t\t\t<router-outlet></router-outlet>\n    \t\t\t</margin>\n    \t\t\t\n    ",
+                        directives: [
+                            header_component_1.HeaderComponent,
+                            router_1.ROUTER_DIRECTIVES,
+                            fitem_component_1.FItemComponent,
+                            adamashome_component_1.AdamasHomeComponent,
+                            adamasheader_component_1.AdamasHeaderComponent,
+                            breadcrumb_component_1.BreadcrumbComponent
+                        ]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
